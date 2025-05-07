@@ -20,7 +20,7 @@ def restore_results() -> None:
         logging.info("Restore the energy system and the results.")
 
         energysystem = EnergySystem()
-        energysystem.restore(dpath=None, filename="energysystem_dump.oemof")
+        energysystem.restore(dpath="C:\git\github\Oemof\master_projekt\Master Projekt V2G\Dumps", filename="Test1")
 
         results_df = energysystem.results["main"]
         return results_df

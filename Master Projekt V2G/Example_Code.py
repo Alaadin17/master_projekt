@@ -61,8 +61,7 @@ class EnergySystemModel:
         self.main()
 
     def main(self):
-        dump_and_restore=True
-        self.dump_results = dump_and_restore
+        self.should_dump_results = True  # oder False je nach Bedarf
         self.solver = "cbc"  # 'glpk', 'gurobi',....
         self.solver_verbose = False  # show/hide solver output
         self.debug = False  # Set number_of_timesteps to 3 to get a readable lp-file.
@@ -160,8 +159,8 @@ class EnergySystemModel:
         # You can omit the attributes (as None is the default value) for testing
         # cases. You should use unique names/folders for valuable results to avoid
         # overwriting.
-        if self.dump_results:
-            self.es.dump(dpath=None, filename="Test1")
+        if self.should_dump_results:
+            self.es.dump(dpath="C:\git\github\Oemof\master_projekt\Master Projekt V2G\Dumps", filename="Test1")
 
 
 if __name__ == "__main__":
